@@ -1,4 +1,5 @@
 <?php
 	$file = $_REQUEST['file'];
-        echo `perl tree-parse.pl $file 2&>1`;
+	$lib_path = LIB_PATH;
+        echo `perl $lib_path/tree-parse.pl $file 2&>1`;
 ?>

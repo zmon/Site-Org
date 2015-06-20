@@ -3,7 +3,8 @@
 
 echo "<a href=index.php?action=source&file=" .$dir.">Source</a><br><br>";
 
-$document = `perl parser-print.pl $path/$dir`;
+$lib_path = LIB_PATH;
+$document = `perl $lib_path/parser-print.pl $path/$dir`;
 
 $minDocLength = 1;
 

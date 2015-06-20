@@ -1,5 +1,6 @@
 <?php
-$document = `perl parser-missingfields.pl $path/$dir`;
+$lib_path = LIB_PATH;
+$document = `perl $lib_path/parser-missingfields.pl $path/$dir`;
 
 $minDocLength = 79;
 

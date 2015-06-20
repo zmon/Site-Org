@@ -64,10 +64,6 @@ else if($_REQUEST['action'] == 'render') {
 #		include('file.php');
 
 	}
-	echo "LALALLALALAL<br>";
-#	echo `perl parser.pl $path/$dir`;
-	#system("perl parser.pl $path/$dir  > $path/Output999.html");
-	#echo file_get_contents("Output999.html", FILE_USE_INCLUDE_PATH);
 	
 	if(isset($_REQUEST['file'])){
 		echo "</div></div>";
@@ -89,7 +85,8 @@ echo `cd /var/www/www.commonaccord.org/Alpha; git reset --hard HEAD; git pull -f
 
 /*
 else if($_REQUEST['action'] == 'graph') {
-	echo `perl tree-parse.pl $dir 2&>1`;
+	$lib_path = LIB_PATH;
+	echo `perl $lib_path/tree-parse.pl $dir 2&>1`;
 }
 */
 	
