@@ -35,6 +35,7 @@ include('list.php');
 else if($_REQUEST['action'] == 'source') {
 
 if(isset($_REQUEST['submit'])) {
+print "<pre>|$path.$dir|</pre>";  // |./Doc/.doc/escrow/Demo_Escrow_Step_1_Parties|
 	$fp = fopen($path.$dir, "w");
 	$data = $_REQUEST['newcontent'];
 	$data = preg_replace('/\r\n/', "\n", $data);
@@ -43,6 +44,7 @@ if(isset($_REQUEST['submit'])) {
 	fclose($fp);
 }
 
+print "<pre>|$path.$dir|</pre>";
 $content = file_get_contents($path.$dir, FILE_USE_INCLUDE_PATH);
 $contents = explode("\n", $content);
 $rootdir = pathinfo($dir);
