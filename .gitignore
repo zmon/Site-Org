@@ -1,3 +1,5 @@
 newlogs
 /logs
 .idea/
+vendor/
+
