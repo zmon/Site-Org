@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-$path = './Doc/';
+$path = ROOT . '/Doc/';
 
 $GitHubRepo = "commonaccord/Site-Org";
 
@@ -34,12 +34,24 @@ switch ($_REQUEST['action']) {
     case 'source':
 
         if (isset($_REQUEST['submit'])) {
-            $fp = fopen($path . $dir, "w");
-            $data = $_REQUEST['newcontent'];
-            $data = preg_replace('/\r\n/', "\n", $data);
-            $data = trim($data);
-            fwrite($fp, $data);
-            fclose($fp);
+
+            $file_name = $path . $dir;
+
+            if (file_exists($file_name)) {
+
+                if (is_writeable($file_name)) {
+                    $fp = fopen($file_name, "w");
+                    $data = $_REQUEST['newcontent'];
+                    $data = preg_replace('/\r\n/', "\n", $data);
+                    $data = trim($data);
+                    fwrite($fp, $data);
+                    fclose($fp);
+                } else {
+                    print '<span style="color: red">ERROR: File ' . $dir . ' is not write able.</style>';
+                }
+            } else {
+                print '<span style="color: red">ERROR: File ' . $dir . ' does not exists.</style>';
+            }
         }
 
         $content = file_get_contents($path . $dir, FILE_USE_INCLUDE_PATH);
@@ -47,7 +59,7 @@ switch ($_REQUEST['action']) {
         $rootdir = pathinfo($dir);
         $filenameX = basename($dir);
 
-	//source.php includes the formatting for the table that displays the components of a document
+        //source.php includes the formatting for the table that displays the components of a document
         include("source.php");
 
         break;
