@@ -11,6 +11,12 @@
     cd Site-Org
 ````
 
+## Change to the composer branch
+
+````
+    git checkout composer
+````
+
 ## Run composer to grab all of the dependancies
 
 ````
