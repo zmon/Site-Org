@@ -39,5 +39,10 @@ Installing dependencies (including require-dev)
 Writing lock file
 Generating autoload files
 ````
+## Create the Web Site
+
+You will need to have a web site running that will process PHP files, 
+with the DocumentRoot pointing to your directory.
+
 
 You should be good to go.
