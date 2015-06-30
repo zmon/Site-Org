@@ -2,7 +2,7 @@
 
 ## Install Composer
 
-I install [Globally](https://getcomposer.org/doc/00-intro.md#globally) on my Mac
+I installed Composer [Globally](https://getcomposer.org/doc/00-intro.md#globally) on my Mac
 
 ## Clone repository to your desktop
 
